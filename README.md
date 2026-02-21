@@ -95,3 +95,6 @@ This project contains the **database schema** for a Crime Records System, design
 
 ## License
 This project is for educational purposes. Feel free to use and modify the database schema.
+
+## Author
+**Md Imran**
