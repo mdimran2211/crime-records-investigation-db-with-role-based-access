@@ -1,6 +1,4 @@
--- Database: crime_records_system
-
--- Create database
+```sql
 CREATE DATABASE IF NOT EXISTS crime_records_system;
 USE crime_records_system;
 
@@ -79,27 +77,25 @@ CREATE TABLE IF NOT EXISTS Victim_Case (
 
 -- Users and Roles
 
--- Admin user: full access
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin123';
 GRANT ALL PRIVILEGES ON crime_records_system.* TO 'admin'@'localhost';
 
--- Investigator
 CREATE USER 'investigator'@'localhost' IDENTIFIED BY 'invest123';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Criminal TO 'investigator'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Crime_Case TO 'investigator'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Evidence TO 'investigator'@'localhost';
 
--- Officer
 CREATE USER 'officer'@'localhost' IDENTIFIED BY 'officer123';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Crime_Case TO 'officer'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Evidence TO 'officer'@'localhost';
 
--- Clerk
 CREATE USER 'clerk'@'localhost' IDENTIFIED BY 'clerk123';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Victim TO 'clerk'@'localhost';
 
--- Auditor
 CREATE USER 'auditor'@'localhost' IDENTIFIED BY 'auditor123';
 GRANT SELECT ON crime_records_system.* TO 'auditor'@'localhost';
 
 FLUSH PRIVILEGES;
+```
+
+
