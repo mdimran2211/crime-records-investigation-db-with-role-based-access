@@ -1,14 +1,10 @@
-
 -- Database: crime_records_system
-
 
 -- Create database
 CREATE DATABASE IF NOT EXISTS crime_records_system;
 USE crime_records_system;
 
-
 -- Table: Criminal
-
 CREATE TABLE IF NOT EXISTS Criminal (
     Criminal_ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
@@ -17,9 +13,7 @@ CREATE TABLE IF NOT EXISTS Criminal (
     Arrest_Date DATE
 );
 
-
 -- Table: Crime_Case
-
 CREATE TABLE IF NOT EXISTS Crime_Case (
     Case_ID INT PRIMARY KEY AUTO_INCREMENT,
     Case_Type VARCHAR(50),
@@ -28,9 +22,7 @@ CREATE TABLE IF NOT EXISTS Crime_Case (
     Filed_Date DATE
 );
 
--- ===============================
 -- Table: Police_Officer
--- ===============================
 CREATE TABLE IF NOT EXISTS Police_Officer (
     Officer_ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
@@ -39,9 +31,7 @@ CREATE TABLE IF NOT EXISTS Police_Officer (
     Contact_Number VARCHAR(15)
 );
 
--- ===============================
 -- Table: Victim
--- ===============================
 CREATE TABLE IF NOT EXISTS Victim (
     Victim_ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
@@ -50,9 +40,7 @@ CREATE TABLE IF NOT EXISTS Victim (
     Contact_Number VARCHAR(15)
 );
 
--- ===============================
 -- Table: Evidence
--- ===============================
 CREATE TABLE IF NOT EXISTS Evidence (
     Evidence_ID INT PRIMARY KEY AUTO_INCREMENT,
     Case_ID INT,
@@ -62,9 +50,7 @@ CREATE TABLE IF NOT EXISTS Evidence (
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
 
--- ===============================
 -- Table: Criminal_Case (Many-to-Many)
--- ===============================
 CREATE TABLE IF NOT EXISTS Criminal_Case (
     Criminal_ID INT,
     Case_ID INT,
@@ -73,9 +59,7 @@ CREATE TABLE IF NOT EXISTS Criminal_Case (
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
 
--- ===============================
 -- Table: Officer_Case (Many-to-Many)
--- ===============================
 CREATE TABLE IF NOT EXISTS Officer_Case (
     Officer_ID INT,
     Case_ID INT,
@@ -84,9 +68,7 @@ CREATE TABLE IF NOT EXISTS Officer_Case (
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
 
--- ===============================
 -- Table: Victim_Case (Many-to-Many)
--- ===============================
 CREATE TABLE IF NOT EXISTS Victim_Case (
     Victim_ID INT,
     Case_ID INT,
@@ -95,32 +77,29 @@ CREATE TABLE IF NOT EXISTS Victim_Case (
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
 
--- ===============================
 -- Users and Roles
--- ===============================
 
 -- Admin user: full access
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin123';
 GRANT ALL PRIVILEGES ON crime_records_system.* TO 'admin'@'localhost';
 
--- Investigator: access to Criminal, Crime_Case, Evidence
+-- Investigator
 CREATE USER 'investigator'@'localhost' IDENTIFIED BY 'invest123';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Criminal TO 'investigator'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Crime_Case TO 'investigator'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Evidence TO 'investigator'@'localhost';
 
--- Officer: access to Crime_Case and Evidence
+-- Officer
 CREATE USER 'officer'@'localhost' IDENTIFIED BY 'officer123';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Crime_Case TO 'officer'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Evidence TO 'officer'@'localhost';
 
--- Clerk: access to Victim
+-- Clerk
 CREATE USER 'clerk'@'localhost' IDENTIFIED BY 'clerk123';
 GRANT SELECT, INSERT, UPDATE, DELETE ON crime_records_system.Victim TO 'clerk'@'localhost';
 
--- Auditor: read-only access to all tables
+-- Auditor
 CREATE USER 'auditor'@'localhost' IDENTIFIED BY 'auditor123';
 GRANT SELECT ON crime_records_system.* TO 'auditor'@'localhost';
 
--- Apply privileges
 FLUSH PRIVILEGES;
