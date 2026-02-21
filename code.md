@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS crime_records_system;
 USE crime_records_system;
 
 -- Table: Criminal
-CREATE TABLE IF NOT EXISTS Criminal (
+CREATE TABLE Criminal (
     Criminal_ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
     DOB DATE,
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS Criminal (
 );
 
 -- Table: Crime_Case
-CREATE TABLE IF NOT EXISTS Crime_Case (
+CREATE TABLE Crime_Case (
     Case_ID INT PRIMARY KEY AUTO_INCREMENT,
     Case_Type VARCHAR(50),
     Crime_Location VARCHAR(100),
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS Crime_Case (
 );
 
 -- Table: Police_Officer
-CREATE TABLE IF NOT EXISTS Police_Officer (
+CREATE TABLE Police_Officer (
     Officer_ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
     Officer_Rank VARCHAR(50) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS Police_Officer (
 );
 
 -- Table: Victim
-CREATE TABLE IF NOT EXISTS Victim (
+CREATE TABLE Victim (
     Victim_ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
     DOB DATE,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS Victim (
 );
 
 -- Table: Evidence
-CREATE TABLE IF NOT EXISTS Evidence (
+CREATE TABL Evidence (
     Evidence_ID INT PRIMARY KEY AUTO_INCREMENT,
     Case_ID INT,
     Evidence_Type VARCHAR(50),
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Evidence (
 );
 
 -- Table: Criminal_Case (Many-to-Many)
-CREATE TABLE IF NOT EXISTS Criminal_Case (
+CREATE TABLE Criminal_Case (
     Criminal_ID INT,
     Case_ID INT,
     PRIMARY KEY (Criminal_ID, Case_ID),
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS Criminal_Case (
 );
 
 -- Table: Officer_Case (Many-to-Many)
-CREATE TABLE IF NOT EXISTS Officer_Case (
+CREATE TABLE Officer_Case (
     Officer_ID INT,
     Case_ID INT,
     PRIMARY KEY (Officer_ID, Case_ID),
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS Officer_Case (
 );
 
 -- Table: Victim_Case (Many-to-Many)
-CREATE TABLE IF NOT EXISTS Victim_Case (
+CREATE TABLE Victim_Case (
     Victim_ID INT,
     Case_ID INT,
     PRIMARY KEY (Victim_ID, Case_ID),
