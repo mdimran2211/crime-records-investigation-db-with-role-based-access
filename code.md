@@ -1,14 +1,14 @@
--- ===============================
+
 -- Database: crime_records_system
--- ===============================
+
 
 -- Create database
 CREATE DATABASE IF NOT EXISTS crime_records_system;
 USE crime_records_system;
 
--- ===============================
+
 -- Table: Criminal
--- ===============================
+
 CREATE TABLE IF NOT EXISTS Criminal (
     Criminal_ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS Criminal (
     Arrest_Date DATE
 );
 
--- ===============================
+
 -- Table: Crime_Case
--- ===============================
+
 CREATE TABLE IF NOT EXISTS Crime_Case (
     Case_ID INT PRIMARY KEY AUTO_INCREMENT,
     Case_Type VARCHAR(50),
