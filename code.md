@@ -1,5 +1,5 @@
 ```sql
-CREATE DATABASE IF NOT EXISTS crime_records_system;
+CREATE DATABASE crime_records_system;
 USE crime_records_system;
 
 -- Table: Criminal
