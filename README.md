@@ -1,101 +1,159 @@
-# Crime Records System Database
+🚔 Crime Records System Database
+📌 Overview
 
-## Overview
-This project contains the **database schema** for a Crime Records System, designed to manage information about criminals, cases, police officers, victims, and evidence. The system supports multiple user roles with different access levels.
+This project contains the database schema for a Crime Records System, designed to manage information about criminals, cases, police officers, victims, and evidence.
 
----
+The system is built using MySQL and demonstrates relational database design, foreign key relationships, many-to-many mappings, and role-based access control.
 
-## Database: `crime_records_system`
+🗄️ Database: crime_records_system
+📑 Tables
+🔹 Criminal
 
-### Tables
+Criminal_ID (PK)
 
-1. **Criminal**
-   - `Criminal_ID` (PK)
-   - `Name`
-   - `DOB`
-   - `Crime_Type`
-   - `Arrest_Date`
+Name
 
-2. **Crime_Case**
-   - `Case_ID` (PK)
-   - `Case_Type`
-   - `Crime_Location`
-   - `Case_Status`
-   - `Filed_Date`
+DOB
 
-3. **Police_Officer**
-   - `Officer_ID` (PK)
-   - `Name`
-   - `Officer_Rank`
-   - `Station_ID`
-   - `Contact_Number`
+Crime_Type
 
-4. **Victim**
-   - `Victim_ID` (PK)
-   - `Name`
-   - `DOB`
-   - `Address`
-   - `Contact_Number`
+Arrest_Date
 
-5. **Evidence**
-   - `Evidence_ID` (PK)
-   - `Case_ID` (FK → Crime_Case)
-   - `Evidence_Type`
-   - `Collected_Date`
-   - `Location_Found`
+🔹 Crime_Case
 
-6. **Criminal_Case** (Many-to-Many)
-   - `Criminal_ID` (FK → Criminal)
-   - `Case_ID` (FK → Crime_Case)
+Case_ID (PK)
 
-7. **Officer_Case** (Many-to-Many)
-   - `Officer_ID` (FK → Police_Officer)
-   - `Case_ID` (FK → Crime_Case)
+Case_Type
 
-8. **Victim_Case** (Many-to-Many)
-   - `Victim_ID` (FK → Victim)
-   - `Case_ID` (FK → Crime_Case)
+Crime_Location
 
----
+Case_Status
 
-## Relationships
-- One **case** can involve multiple **criminals**, **officers**, and **victims**.  
-- One **criminal** can be linked to multiple **cases**.  
-- Evidence is linked to a specific **case**.  
-- ER diagram can be added here as a reference (optional: screenshot from MySQL Workbench).
+Filed_Date
 
----
+🔹 Police_Officer
 
-## User Roles & Permissions
+Officer_ID (PK)
 
-| User Role      | Access                                                |
-|----------------|------------------------------------------------------|
-| Admin          | Full access to all tables                             |
-| Investigator   | CRUD access to Criminal, Crime_Case, Evidence        |
-| Officer        | CRUD access to Crime_Case, Evidence                  |
-| Clerk          | CRUD access to Victim                                 |
-| Auditor        | Read-only access to all tables                        |
+Name
 
----
+Officer_Rank
 
-## Usage
-1. Open **MySQL Workbench**.  
-2. Run the SQL file `crime_records_system.sql` to create the database and all tables.  
-3. Users can access the database using their assigned roles.  
-4. You can link tables using foreign keys to maintain data integrity.
+Station_ID
 
----
+Contact_Number
 
-## ER Diagram
-<img width="1595" height="646" alt="ER Diagram(JPG) drawio (1)" src="https://github.com/user-attachments/assets/6ef19235-33c0-421e-ae47-71f98b9f5b6e" />
+🔹 Victim
 
+Victim_ID (PK)
 
+Name
 
+DOB
 
----
+Address
 
-## License
-This project is for educational purposes. Feel free to use and modify the database schema.
+Contact_Number
 
-## Author
-**Md Imran**
+🔹 Evidence
+
+Evidence_ID (PK)
+
+Case_ID (FK → Crime_Case)
+
+Evidence_Type
+
+Collected_Date
+
+Location_Found
+
+🔹 Criminal_Case (Many-to-Many)
+
+Criminal_ID (FK → Criminal)
+
+Case_ID (FK → Crime_Case)
+
+🔹 Officer_Case (Many-to-Many)
+
+Officer_ID (FK → Police_Officer)
+
+Case_ID (FK → Crime_Case)
+
+🔹 Victim_Case (Many-to-Many)
+
+Victim_ID (FK → Victim)
+
+Case_ID (FK → Crime_Case)
+
+🔗 Relationships
+
+One case can involve multiple criminals, officers, and victims.
+
+One criminal can be linked to multiple cases.
+
+One officer can be assigned to multiple cases.
+
+One victim can be associated with multiple cases.
+
+Evidence is linked to a specific case (One-to-Many relationship).
+
+✨ Key Features
+
+✔ Structured relational database design
+✔ Implementation of Primary and Foreign Keys
+✔ Many-to-Many relationship handling using junction tables
+✔ Role-Based Access Control (RBAC)
+✔ Data integrity using constraints
+✔ Scalable structure for future enhancements
+✔ Supports secure multi-user access
+
+▶️ How to Use the Project
+
+Open MySQL Workbench
+
+Create a new schema named crime_records_system
+
+Run the provided SQL file (crime_records_system.sql) to:
+
+Create all tables
+
+Define relationships
+
+Create users and assign permissions
+
+Insert sample data (if provided)
+
+Use SQL queries such as:
+
+SELECT to retrieve records
+
+INSERT to add new data
+
+UPDATE to modify records
+
+DELETE to remove records
+
+Log in with different user roles (Admin, Investigator, Officer, Clerk, Auditor) to test role-based permissions
+
+📊 ER Diagram
+<img width="1595" height="646" alt="ER Diagram" src="https://github.com/user-attachments/assets/6ef19235-33c0-421e-ae47-71f98b9f5b6e" />
+🔐 User Roles & Permissions
+👤 User Role	🔑 Access
+Admin	Full access to all tables
+Investigator	CRUD access to Criminal, Crime_Case, Evidence
+Officer	CRUD access to Crime_Case, Evidence
+Clerk	CRUD access to Victim
+Auditor	Read-only access to all tables
+👥 Group Members
+
+Md Imran
+
+Mohd Ashif Hussain
+
+Mohd Fahim
+
+Mohit
+
+📜 License
+
+This project is created for educational purposes. It may be used and modified for learning and academic submissions.
