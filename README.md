@@ -1,58 +1,71 @@
+
+
 🚔 Crime Records System Database
+<p align="center"> A relational database project built using MySQL to manage crime records efficiently. </p>
 📌 Overview
 
-The Crime Records System Database is designed to manage and organize information about criminals, crime cases, police officers, victims, and evidence.
+The Crime Records System Database is designed to manage and organize information about:
 
-Built using MySQL, this project demonstrates:
+Criminals
 
-Relational database design
+Crime Cases
 
-Foreign key relationships
+Police Officers
 
-Many-to-Many mappings
+Victims
+
+Evidence
+
+This project demonstrates:
+
+Relational Database Design
+
+Foreign Key Relationships
+
+Many-to-Many Mapping
 
 Role-Based Access Control (RBAC)
 
-🗄️ Database Information
+🗄️ Database Details
 
 Database Name: crime_records_system
 
-📑 Tables Structure
+🧱 Database Structure
 🔹 Criminal
-Column	Description
-Criminal_ID	Primary Key
-Name	Criminal Name
-DOB	Date of Birth
-Crime_Type	Type of Crime
-Arrest_Date	Date of Arrest
+Field	Type	Key
+Criminal_ID	INT	PK
+Name	VARCHAR	—
+DOB	DATE	—
+Crime_Type	VARCHAR	—
+Arrest_Date	DATE	—
 🔹 Crime_Case
-Column	Description
-Case_ID	Primary Key
-Case_Type	Type of Case
-Crime_Location	Location of Crime
-Case_Status	Status of Case
-Filed_Date	Date Filed
+Field	Type	Key
+Case_ID	INT	PK
+Case_Type	VARCHAR	—
+Crime_Location	VARCHAR	—
+Case_Status	VARCHAR	—
+Filed_Date	DATE	—
 🔹 Police_Officer
-Column	Description
-Officer_ID	Primary Key
-Name	Officer Name
-Officer_Rank	Rank
-Station_ID	Station Reference
-Contact_Number	Phone Number
+Field	Type	Key
+Officer_ID	INT	PK
+Name	VARCHAR	—
+Officer_Rank	VARCHAR	—
+Station_ID	INT	—
+Contact_Number	VARCHAR	—
 🔹 Victim
-Column	Description
-Victim_ID	Primary Key
-Name	Victim Name
-DOB	Date of Birth
-Address	Residential Address
-Contact_Number	Phone Number
+Field	Type	Key
+Victim_ID	INT	PK
+Name	VARCHAR	—
+DOB	DATE	—
+Address	VARCHAR	—
+Contact_Number	VARCHAR	—
 🔹 Evidence
-Column	Description
-Evidence_ID	Primary Key
-Case_ID	Foreign Key → Crime_Case
-Evidence_Type	Type of Evidence
-Collected_Date	Collection Date
-Location_Found	Evidence Location
+Field	Type	Key
+Evidence_ID	INT	PK
+Case_ID	INT	FK → Crime_Case
+Evidence_Type	VARCHAR	—
+Collected_Date	DATE	—
+Location_Found	VARCHAR	—
 🔹 Relationship Tables
 Table	Purpose
 Criminal_Case	Links Criminals ↔ Cases
@@ -70,41 +83,29 @@ One Criminal ➝ Multiple Cases
 
 Evidence ➝ Linked to one Case (One-to-Many)
 
-✨ Key Features
-
-Structured relational database
-
-Primary & Foreign Key constraints
-
-Many-to-Many relationship implementation
-
-Secure role-based access
-
-Scalable and extendable structure
-
+🔐 User Roles & Permissions
+Role	Access Level
+👑 Admin	Full Access
+🕵️ Investigator	Manage Criminal, Case, Evidence
+👮 Officer	Manage Case & Evidence
+📝 Clerk	Manage Victim
+👁️ Auditor	Read-Only Access
 ▶️ How to Run
 
 Open MySQL Workbench
 
 Create schema: crime_records_system
 
-Run crime_records_system.sql
+Run the SQL file
 
 Insert sample data
 
 Test using SELECT queries
 
-Log in with different user roles to verify permissions
+Log in with different roles to verify permissions
 
-🔐 User Roles & Permissions
-Role	Access
-👑 Admin	Full access
-🕵️ Investigator	Manage Criminal, Case, Evidence
-👮 Officer	Manage Case & Evidence
-📝 Clerk	Manage Victim
-👁️ Auditor	Read-only access
 📊 ER Diagram
-<img width="1595" height="646" alt="ER Diagram" src="https://github.com/user-attachments/assets/6ef19235-33c0-421e-ae47-71f98b9f5b6e" />
+<p align="center"> <img src="https://github.com/user-attachments/assets/6ef19235-33c0-421e-ae47-71f98b9f5b6e" width="90%"> </p>
 👥 Group Members
 
 Md Imran
