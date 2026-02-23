@@ -1,0 +1,10 @@
+CREATE TABLE Police_Officer (
+    Officer_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    Officer_Rank VARCHAR(50) NOT NULL,
+    Station_ID INT,
+    Contact_Number VARCHAR(15)
+);
+INSERT INTO Police_Officer (Name, Officer_Rank, Station_ID, Contact_Number) VALUES
+('Inspector Raj', 'Inspector', NULL, '9876543210'),
+('Sub Inspector Meena', 'SI', NULL, '9123456780');
