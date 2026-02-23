@@ -1,149 +1,110 @@
 🚔 Crime Records System Database
 📌 Overview
 
-This project contains the database schema for a Crime Records System, designed to manage information about criminals, cases, police officers, victims, and evidence.
+The Crime Records System Database is designed to manage and organize information about criminals, crime cases, police officers, victims, and evidence.
 
-The system is built using MySQL and demonstrates relational database design, foreign key relationships, many-to-many mappings, and role-based access control.
+Built using MySQL, this project demonstrates:
 
-🗄️ Database: crime_records_system
-📑 Tables
+Relational database design
+
+Foreign key relationships
+
+Many-to-Many mappings
+
+Role-Based Access Control (RBAC)
+
+🗄️ Database Information
+
+Database Name: crime_records_system
+
+📑 Tables Structure
 🔹 Criminal
-
-Criminal_ID (PK)
-
-Name
-
-DOB
-
-Crime_Type
-
-Arrest_Date
-
+Column	Description
+Criminal_ID	Primary Key
+Name	Criminal Name
+DOB	Date of Birth
+Crime_Type	Type of Crime
+Arrest_Date	Date of Arrest
 🔹 Crime_Case
-
-Case_ID (PK)
-
-Case_Type
-
-Crime_Location
-
-Case_Status
-
-Filed_Date
-
+Column	Description
+Case_ID	Primary Key
+Case_Type	Type of Case
+Crime_Location	Location of Crime
+Case_Status	Status of Case
+Filed_Date	Date Filed
 🔹 Police_Officer
-
-Officer_ID (PK)
-
-Name
-
-Officer_Rank
-
-Station_ID
-
-Contact_Number
-
+Column	Description
+Officer_ID	Primary Key
+Name	Officer Name
+Officer_Rank	Rank
+Station_ID	Station Reference
+Contact_Number	Phone Number
 🔹 Victim
-
-Victim_ID (PK)
-
-Name
-
-DOB
-
-Address
-
-Contact_Number
-
+Column	Description
+Victim_ID	Primary Key
+Name	Victim Name
+DOB	Date of Birth
+Address	Residential Address
+Contact_Number	Phone Number
 🔹 Evidence
-
-Evidence_ID (PK)
-
-Case_ID (FK → Crime_Case)
-
-Evidence_Type
-
-Collected_Date
-
-Location_Found
-
-🔹 Criminal_Case (Many-to-Many)
-
-Criminal_ID (FK → Criminal)
-
-Case_ID (FK → Crime_Case)
-
-🔹 Officer_Case (Many-to-Many)
-
-Officer_ID (FK → Police_Officer)
-
-Case_ID (FK → Crime_Case)
-
-🔹 Victim_Case (Many-to-Many)
-
-Victim_ID (FK → Victim)
-
-Case_ID (FK → Crime_Case)
-
+Column	Description
+Evidence_ID	Primary Key
+Case_ID	Foreign Key → Crime_Case
+Evidence_Type	Type of Evidence
+Collected_Date	Collection Date
+Location_Found	Evidence Location
+🔹 Relationship Tables
+Table	Purpose
+Criminal_Case	Links Criminals ↔ Cases
+Officer_Case	Links Officers ↔ Cases
+Victim_Case	Links Victims ↔ Cases
 🔗 Relationships
 
-One case can involve multiple criminals, officers, and victims.
+One Case ➝ Multiple Criminals
 
-One criminal can be linked to multiple cases.
+One Case ➝ Multiple Officers
 
-One officer can be assigned to multiple cases.
+One Case ➝ Multiple Victims
 
-One victim can be associated with multiple cases.
+One Criminal ➝ Multiple Cases
 
-Evidence is linked to a specific case (One-to-Many relationship).
+Evidence ➝ Linked to one Case (One-to-Many)
 
 ✨ Key Features
 
-✔ Structured relational database design
-✔ Implementation of Primary and Foreign Keys
-✔ Many-to-Many relationship handling using junction tables
-✔ Role-Based Access Control (RBAC)
-✔ Data integrity using constraints
-✔ Scalable structure for future enhancements
-✔ Supports secure multi-user access
+Structured relational database
 
-▶️ How to Use the Project
+Primary & Foreign Key constraints
+
+Many-to-Many relationship implementation
+
+Secure role-based access
+
+Scalable and extendable structure
+
+▶️ How to Run
 
 Open MySQL Workbench
 
-Create a new schema named crime_records_system
+Create schema: crime_records_system
 
-Run the provided SQL file (crime_records_system.sql) to:
+Run crime_records_system.sql
 
-Create all tables
+Insert sample data
 
-Define relationships
+Test using SELECT queries
 
-Create users and assign permissions
+Log in with different user roles to verify permissions
 
-Insert sample data (if provided)
-
-Use SQL queries such as:
-
-SELECT to retrieve records
-
-INSERT to add new data
-
-UPDATE to modify records
-
-DELETE to remove records
-
-Log in with different user roles (Admin, Investigator, Officer, Clerk, Auditor) to test role-based permissions
-
+🔐 User Roles & Permissions
+Role	Access
+👑 Admin	Full access
+🕵️ Investigator	Manage Criminal, Case, Evidence
+👮 Officer	Manage Case & Evidence
+📝 Clerk	Manage Victim
+👁️ Auditor	Read-only access
 📊 ER Diagram
 <img width="1595" height="646" alt="ER Diagram" src="https://github.com/user-attachments/assets/6ef19235-33c0-421e-ae47-71f98b9f5b6e" />
-🔐 User Roles & Permissions
-👤 User Role	🔑 Access
-Admin	Full access to all tables
-Investigator	CRUD access to Criminal, Crime_Case, Evidence
-Officer	CRUD access to Crime_Case, Evidence
-Clerk	CRUD access to Victim
-Auditor	Read-only access to all tables
 👥 Group Members
 
 Md Imran
@@ -156,4 +117,4 @@ Mohit
 
 📜 License
 
-This project is created for educational purposes. It may be used and modified for learning and academic submissions.
+This project is for educational purposes only.
