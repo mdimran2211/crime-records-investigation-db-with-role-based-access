@@ -152,8 +152,8 @@ UPDATE – Modify existing data
 DELETE – Remove records
 
 📈 ER Diagram
-<p align="center"> <img src="<img width="2991" height="1211" alt="ER 1" src="https://github.com/user-attachments/assets/5760ec35-98c6-46a7-8e81-a3ed616f30e5" />
-" width="900"> </p>
+<img width="2991" height="1211" alt="ER 1" src="https://github.com/user-attachments/assets/5ba0fd40-6629-4549-a4a7-530d188169ad" />
+
 👨‍💻 Project Team
 
 👤 Md Imran
