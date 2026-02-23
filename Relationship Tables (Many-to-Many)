@@ -1,0 +1,13 @@
+-- Table: Criminal_Case (Many-to-Many)
+CREATE TABLE Criminal_Case (
+    Criminal_ID INT,
+    Case_ID INT,
+    PRIMARY KEY (Criminal_ID, Case_ID),
+    FOREIGN KEY (Criminal_ID) REFERENCES Criminal(Criminal_ID),
+    FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
+);
+
+INSERT INTO Criminal_Case VALUES
+(1, 1),
+(2, 2);
+
