@@ -1,5 +1,5 @@
 -- Table: Evidence
-CREATE TABL Evidence (
+CREATE TABLE Evidence (
     Evidence_ID INT PRIMARY KEY AUTO_INCREMENT,
     Case_ID INT,
     Evidence_Type VARCHAR(50),
