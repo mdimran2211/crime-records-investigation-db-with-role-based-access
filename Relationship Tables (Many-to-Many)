@@ -11,3 +11,29 @@ INSERT INTO Criminal_Case VALUES
 (1, 1),
 (2, 2);
 
+-- Table: Officer_Case (Many-to-Many)
+CREATE TABLE Officer_Case (
+    Officer_ID INT,
+    Case_ID INT,
+    PRIMARY KEY (Officer_ID, Case_ID),
+    FOREIGN KEY (Officer_ID) REFERENCES Police_Officer(Officer_ID),
+    FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
+);
+
+INSERT INTO Officer_Case VALUES
+(1, 1),
+(2, 2);
+
+
+-- Table: Victim_Case (Many-to-Many)
+CREATE TABLE Victim_Case (
+    Victim_ID INT,
+    Case_ID INT,
+    PRIMARY KEY (Victim_ID, Case_ID),
+    FOREIGN KEY (Victim_ID) REFERENCES Victim(Victim_ID),
+    FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
+);
+
+INSERT INTO Victim_Case VALUES
+(1, 1),
+(2, 2);
