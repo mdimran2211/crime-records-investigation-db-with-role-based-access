@@ -1,0 +1,4 @@
+SELECT c.Name AS Criminal, cc.Case_Type
+FROM Criminal c
+JOIN Criminal_Case cr ON c.Criminal_ID = cr.Criminal_ID
+JOIN Crime_Case cc ON cr.Case_ID = cc.Case_ID;
