@@ -1,0 +1,15 @@
+CREATE DATABASE crime_records_system;
+USE crime_records_system;
+
+-- Table: Criminal
+CREATE TABLE Criminal (
+    Criminal_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    DOB DATE,
+    Crime_Type VARCHAR(50),
+    Arrest_Date DATE
+);
+
+INSERT INTO Criminal (Name, DOB, Crime_Type, Arrest_Date) VALUES
+('Rohit Sharma', '1995-06-12', 'Theft', '2025-01-10'),
+('Aman Verma', '1990-09-22', 'Fraud', '2025-02-05');
