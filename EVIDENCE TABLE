@@ -1,0 +1,13 @@
+-- Table: Evidence
+CREATE TABL Evidence (
+    Evidence_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Case_ID INT,
+    Evidence_Type VARCHAR(50),
+    Collected_Date DATE,
+    Location_Found VARCHAR(100),
+    FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
+);
+
+INSERT INTO Evidence (Case_ID, Evidence_Type, Collected_Date, Location_Found) VALUES
+(1, 'CCTV Footage', '2025-01-10', 'Delhi Market'),
+(2, 'Bank Transaction Record', '2025-02-06', 'Online Portal');
