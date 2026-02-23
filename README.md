@@ -133,36 +133,37 @@ This project demonstrates:
    CREATE DATABASE crime_records_system;
 
    Run the provided SQL file:
+3️⃣ Run the provided SQL file:
 
-Creates all tables
+✅ Creates all tables
 
-Defines relationships
+🔗 Defines relationships
 
-Assigns user roles
+🔐 Assigns user roles & permissions
 
-Use SQL commands:
+4️⃣ Use standard SQL commands to manage data:
 
-SELECT
+SELECT – Retrieve records
 
-INSERT
+INSERT – Add new data
 
-UPDATE
+UPDATE – Modify existing data
 
-DELETE
+DELETE – Remove records
 
 📈 ER Diagram
-<p align="center"> <img src="YOUR_IMAGE_LINK_HERE" width="900"> </p>
+<p align="center"> <img src="YOUR_ER_DIAGRAM_IMAGE_LINK_HERE" width="900"> </p>
 👨‍💻 Project Team
 
-Md Imran
+👤 Md Imran
 
-Mohd Ashif Hussain
+👤 Mohd Ashif Hussain
 
-Mohd Fahim
+👤 Mohd Fahim
 
-Mohit
+👤 Mohit
 
 📜 License
 
 This project is created for educational purposes only.
-It can be used and modified for academic submissions.
+It may be used and modified for learning and academic submissions.
