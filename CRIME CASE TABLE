@@ -1,0 +1,12 @@
+-- Table: Crime_Case
+CREATE TABLE Crime_Case (
+    Case_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Case_Type VARCHAR(50),
+    Crime_Location VARCHAR(100),
+    Case_Status VARCHAR(50),
+    Filed_Date DATE
+);
+
+INSERT INTO Crime_Case (Case_Type, Crime_Location, Case_Status, Filed_Date) VALUES
+('Robbery', 'Delhi Market', 'Under Investigation', '2025-01-09'),
+('Cyber Crime', 'Online Scam', 'Open', '2025-02-04');
