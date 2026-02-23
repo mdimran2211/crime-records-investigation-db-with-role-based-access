@@ -87,7 +87,7 @@ This project contains the **database schema** for a Crime Records System, design
 ---
 
 ## ER Diagram
-![ER Diagram with DB](https://github.com/user-attachments/assets/cd5c1adf-f25c-4e47-84b1-aa5b06a68618)
+https://acrobat.adobe.com/id/urn:aaid:sc:ap:5b6f8720-2a95-4601-9f1e-0542229da8aa
 
 
 
