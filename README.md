@@ -126,70 +126,71 @@ The system implements relational database concepts, foreign key constraints, man
 
 ### Step 2️⃣: Create Database
 
-Open **MySQL Workbench** and run:
+- Open **MySQL Workbench** and run:
 
 
-CREATE DATABASE crime_records_system;
-USE crime_records_system;
-Step 3️⃣: Import SQL File
+- CREATE DATABASE crime_records_system;
+- USE crime_records_system;
+### Step 3️⃣: Import SQL File
 
-Open the provided crime_records_system.sql
+- Open the provided crime_records_system.sql
 
-Execute the script
+- Execute the script
 
-This will:
+- This will:
 
 ✅ Create all tables
 
-🔗 Define relationships
+- 🔗 Define relationships
 
-🔐 Set up foreign keys
+- 🔐 Set up foreign keys
 
-👥 Create user roles and permissions (if included)
+- 👥 Create user roles and permissions (if included)
 
-Step 4️⃣: Perform Database Operations
+### Step 4️⃣: Perform Database Operations
 
-You can now use standard SQL commands:
+- You can now use standard SQL commands:
 
-SELECT – Retrieve records
+- SELECT – Retrieve records
 
-INSERT – Add new data
+- INSERT – Add new data
 
-UPDATE – Modify existing data
+- UPDATE – Modify existing data
 
-DELETE – Remove records
+- DELETE – Remove records
 
 Example:
-SELECT * FROM Criminal;
-Step 5️⃣: Test Role-Based Access
+- SELECT * FROM Criminal;
+### Step 5️⃣: Test Role-Based Access
 
-Login using different roles:
+- Login using different roles:
 
-🛡️ Admin
+- 🛡️ Admin
 
-🕵️ Investigator
+- 🕵️ Investigator
 
-👮 Officer
+- 👮 Officer
 
-🗂️ Clerk
+ -🗂️ Clerk
 
-📊 Auditor
+- 📊 Auditor
 
-Verify that each role has the correct permissions.
+- Verify that each role has the correct permissions.
 
-📈 ER Diagram
-<p align="center"> <img src="YOUR_ER_DIAGRAM_LINK_HERE" width="900"> </p>
-👨‍💻 Project Team
+### 📈 ER Diagram
+<img width="2991" height="1211" alt="ER 1" src="https://github.com/user-attachments/assets/629cdba7-5df0-4d1a-9b74-4559401f00fa" />
 
-👤 Md Imran
+ ###👨‍💻 Project Team
 
-👤 Mohammad Ashif Hussain
+- 👤 Md Imran
 
-👤 Mohammad Fahim
+- 👤 Mohammad Ashif Hussain
 
-👤 Mohit
+- 👤 Mohammad Fahim
 
-📜 License
+- 👤 Mohit
 
-This project is created for educational purposes only.
-It may be used and modified for learning and academic submissions.
+###📜 License
+
+- This project is created for educational purposes only.
+-It may be used and modified for learning and academic submissions.
