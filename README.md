@@ -159,7 +159,8 @@ The system implements relational database concepts, foreign key constraints, man
 
 - DELETE – Remove records
 
-Example:
+- Example:
+  
 - SELECT * FROM Criminal;
   
 ### Step 5️⃣: Test Role-Based Access
