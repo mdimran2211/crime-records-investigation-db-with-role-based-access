@@ -47,7 +47,7 @@ The system implements relational database concepts, foreign key constraints, man
 
 ---
 
-## 📑 Tables Structure
+## 📂 Entities and Attributes
 
 ### 1️⃣ Criminal
 - Criminal_ID (PK)
