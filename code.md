@@ -11,6 +11,11 @@ CREATE TABLE Criminal (
     Arrest_Date DATE
 );
 
+INSERT INTO Criminal (Name, DOB, Crime_Type, Arrest_Date) VALUES
+('Rohit Sharma', '1995-06-12', 'Theft', '2025-01-10'),
+('Aman Verma', '1990-09-22', 'Fraud', '2025-02-05');
+
+
 -- Table: Crime_Case
 CREATE TABLE Crime_Case (
     Case_ID INT PRIMARY KEY AUTO_INCREMENT,
@@ -19,6 +24,10 @@ CREATE TABLE Crime_Case (
     Case_Status VARCHAR(50),
     Filed_Date DATE
 );
+
+INSERT INTO Crime_Case (Case_Type, Crime_Location, Case_Status, Filed_Date) VALUES
+('Robbery', 'Delhi Market', 'Under Investigation', '2025-01-09'),
+('Cyber Crime', 'Online Scam', 'Open', '2025-02-04');
 
 -- Table: Police_Officer
 CREATE TABLE Police_Officer (
@@ -29,6 +38,10 @@ CREATE TABLE Police_Officer (
     Contact_Number VARCHAR(15)
 );
 
+INSERT INTO Police_Officer (Name, Officer_Rank, Station_ID, Contact_Number) VALUES
+('Inspector Raj', 'Inspector', NULL, '9876543210'),
+('Sub Inspector Meena', 'SI', NULL, '9123456780');
+
 -- Table: Victim
 CREATE TABLE Victim (
     Victim_ID INT PRIMARY KEY AUTO_INCREMENT,
@@ -37,6 +50,9 @@ CREATE TABLE Victim (
     Address VARCHAR(200),
     Contact_Number VARCHAR(15)
 );
+INSERT INTO Victim (Name, DOB, Address, Contact_Number) VALUES
+('Ankit Gupta', '2000-03-15', 'Lajpat Nagar, Delhi', '9988776655'),
+('Pooja Singh', '1998-11-30', 'Noida Sector 15', '8877665544');
 
 -- Table: Evidence
 CREATE TABL Evidence (
@@ -48,6 +64,10 @@ CREATE TABL Evidence (
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
 
+INSERT INTO Evidence (Case_ID, Evidence_Type, Collected_Date, Location_Found) VALUES
+(1, 'CCTV Footage', '2025-01-10', 'Delhi Market'),
+(2, 'Bank Transaction Record', '2025-02-06', 'Online Portal');
+
 -- Table: Criminal_Case (Many-to-Many)
 CREATE TABLE Criminal_Case (
     Criminal_ID INT,
@@ -56,6 +76,9 @@ CREATE TABLE Criminal_Case (
     FOREIGN KEY (Criminal_ID) REFERENCES Criminal(Criminal_ID),
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
+INSERT INTO Criminal_Case VALUES
+(1, 1),
+(2, 2);
 
 -- Table: Officer_Case (Many-to-Many)
 CREATE TABLE Officer_Case (
@@ -66,6 +89,10 @@ CREATE TABLE Officer_Case (
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
 
+INSERT INTO Officer_Case VALUES
+(1, 1),
+(2, 2);
+
 -- Table: Victim_Case (Many-to-Many)
 CREATE TABLE Victim_Case (
     Victim_ID INT,
@@ -74,6 +101,11 @@ CREATE TABLE Victim_Case (
     FOREIGN KEY (Victim_ID) REFERENCES Victim(Victim_ID),
     FOREIGN KEY (Case_ID) REFERENCES Crime_Case(Case_ID)
 );
+
+INSERT INTO Victim_Case VALUES
+(1, 1),
+(2, 2);
+
 
 -- Users and Roles
 
