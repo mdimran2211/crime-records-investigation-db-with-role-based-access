@@ -122,13 +122,15 @@ The system implements relational database concepts, foreign key constraints, man
 - Install MySQL Server  
 - Install MySQL Workbench  
 
+## ⚙️ How to Use the Project
+
 ### Step 2️⃣: Create Database
-Open MySQL Workbench and run:
+
+Open **MySQL Workbench** and run:
 
 
 CREATE DATABASE crime_records_system;
 USE crime_records_system;
-
 Step 3️⃣: Import SQL File
 
 Open the provided crime_records_system.sql
@@ -137,17 +139,17 @@ Execute the script
 
 This will:
 
-Create all tables
+✅ Create all tables
 
-Define relationships
+🔗 Define relationships
 
-Set up foreign keys
+🔐 Set up foreign keys
 
-Create user roles and permissions (if included)
+👥 Create user roles and permissions (if included)
 
 Step 4️⃣: Perform Database Operations
 
-You can now use SQL commands:
+You can now use standard SQL commands:
 
 SELECT – Retrieve records
 
@@ -158,14 +160,25 @@ UPDATE – Modify existing data
 DELETE – Remove records
 
 Example:
-
 SELECT * FROM Criminal;
 Step 5️⃣: Test Role-Based Access
 
-Login using different roles (Admin, Investigator, Officer, Clerk, Auditor) and verify permissions.
+Login using different roles:
+
+🛡️ Admin
+
+🕵️ Investigator
+
+👮 Officer
+
+🗂️ Clerk
+
+📊 Auditor
+
+Verify that each role has the correct permissions.
 
 📈 ER Diagram
-<p align="center"> <img src="https://github.com/user-attachments/assets/5ba0fd40-6629-4549-a4a7-530d188169ad" width="900"> </p>
+<p align="center"> <img src="YOUR_ER_DIAGRAM_LINK_HERE" width="900"> </p>
 👨‍💻 Project Team
 
 👤 Md Imran
