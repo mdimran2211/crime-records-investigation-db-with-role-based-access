@@ -1,7 +1,7 @@
-# 🚔 Crime Records Investigation Database  
-### 🔐 With Role-Based Access Control (RBAC)
 
-> A relational database project built using **MySQL** to efficiently manage crime investigation records.
+# 🚔 Crime Records System Database
+
+> A relational database project built using MySQL to manage crime investigation records efficiently.
 
 ---
 
@@ -15,133 +15,139 @@ The **Crime Records System Database** is designed to manage and organize informa
 - 🧍 Victims  
 - 🧪 Evidence  
 
-This project demonstrates:
-
-- 🗄️ Relational Database Design  
-- 🔗 Foreign Key Relationships  
-- 🔄 Many-to-Many Mapping  
-- 🔐 Role-Based Access Control (RBAC)  
-- ✅ Data Integrity using Constraints  
+The system implements relational database concepts, foreign key constraints, many-to-many mappings, and role-based access control (RBAC).
 
 ---
 
-## 🏛️ Database Information
+## 🛠️ Tools & Technologies Used
+
+- 🗄️ **MySQL** – Database creation and management  
+- 🖥️ **MySQL Workbench** – Database design and execution  
+- 📊 **Draw.io** – ER Diagram creation  
+- 🌐 **GitHub** – Version control and project hosting  
+
+---
+
+## ⭐ Key Features
+
+- ✅ Structured Relational Database Design  
+- 🔗 Foreign Key Relationships  
+- 🔁 Many-to-Many Relationship Handling (Junction Tables)  
+- 🔐 Role-Based Access Control (RBAC)  
+- 🛡️ Data Integrity using Constraints  
+- 👥 Multi-user Access Support  
+- 📈 ER Diagram Representation  
+- 📦 Scalable and Extendable Structure  
+
+---
+
+## 🗄️ Database Information
 
 **Database Name:** `crime_records_system`
 
 ---
 
-## 🗂️ Tables Structure
+## 📑 Tables Structure
 
 ### 1️⃣ Criminal
-
-| Column Name   | Description |
-|--------------|------------|
-| Criminal_ID (PK) | Primary Key |
-| Name | Criminal Name |
-| DOB | Date of Birth |
-| Crime_Type | Type of Crime |
-| Arrest_Date | Date of Arrest |
-
----
+- Criminal_ID (PK)
+- Name
+- DOB
+- Crime_Type
+- Arrest_Date
 
 ### 2️⃣ Crime_Case
-
-| Column Name   | Description |
-|--------------|------------|
-| Case_ID (PK) | Primary Key |
-| Case_Type | Type of Case |
-| Crime_Location | Location of Crime |
-| Case_Status | Status of Case |
-| Filed_Date | Date Filed |
-
----
+- Case_ID (PK)
+- Case_Type
+- Crime_Location
+- Case_Status
+- Filed_Date
 
 ### 3️⃣ Police_Officer
-
-| Column Name   | Description |
-|--------------|------------|
-| Officer_ID (PK) | Primary Key |
-| Name | Officer Name |
-| Officer_Rank | Rank |
-| Station_ID | Station Reference |
-| Contact_Number | Phone Number |
-
----
+- Officer_ID (PK)
+- Name
+- Officer_Rank
+- Station_ID
+- Contact_Number
 
 ### 4️⃣ Victim
-
-| Column Name   | Description |
-|--------------|------------|
-| Victim_ID (PK) | Primary Key |
-| Name | Victim Name |
-| DOB | Date of Birth |
-| Address | Residential Address |
-| Contact_Number | Phone Number |
-
----
+- Victim_ID (PK)
+- Name
+- DOB
+- Address
+- Contact_Number
 
 ### 5️⃣ Evidence
-
-| Column Name   | Description |
-|--------------|------------|
-| Evidence_ID (PK) | Primary Key |
-| Case_ID (FK) | References Crime_Case |
-| Evidence_Type | Type of Evidence |
-| Collected_Date | Date Collected |
-| Location_Found | Evidence Location |
+- Evidence_ID (PK)
+- Case_ID (FK → Crime_Case)
+- Evidence_Type
+- Collected_Date
+- Location_Found
 
 ---
 
-## 🔁 Relationship Tables (Junction Tables)
+## 🔁 Relationship (Junction) Tables
 
-| Table Name | Purpose |
-|------------|---------|
-| Criminal_Case | Links Criminals ↔ Cases |
-| Officer_Case | Links Officers ↔ Cases |
-| Victim_Case | Links Victims ↔ Cases |
+- Criminal_Case (Criminal ↔ Case)
+- Officer_Case (Officer ↔ Case)
+- Victim_Case (Victim ↔ Case)
 
 ---
 
 ## 🔗 Relationships Overview
 
-- One Case ➝ Multiple Criminals 👤  
-- One Case ➝ Multiple Officers 👮  
-- One Case ➝ Multiple Victims 🧍  
-- One Criminal ➝ Multiple Cases 📂  
-- Evidence ➝ Linked to One Case 🧪  
+- One case can involve multiple criminals, officers, and victims.
+- One criminal can be linked to multiple cases.
+- One officer can handle multiple cases.
+- One victim can be linked to multiple cases.
+- Evidence is connected to a specific case (One-to-Many).
 
 ---
 
 ## 👥 User Roles & Permissions
 
-| Role | Access Level |
-|------|--------------|
+| User Role | Access |
+|-----------|-----------------------------------------------|
 | 🛡️ Admin | Full access to all tables |
 | 🕵️ Investigator | CRUD: Criminal, Crime_Case, Evidence |
 | 👮 Officer | CRUD: Crime_Case, Evidence |
-| 🗃️ Clerk | CRUD: Victim |
-| 📊 Auditor | Read-Only access |
+| 🗂️ Clerk | CRUD: Victim |
+| 📊 Auditor | Read-only access |
 
 ---
 
-## ⚙️ How to Run the Project
+## ⚙️ How to Use the Project
 
-1. Open **MySQL Workbench**
-2. Create schema:
-   ```sql
-   CREATE DATABASE crime_records_system;
+### Step 1️⃣: Install Required Tools
+- Install MySQL Server  
+- Install MySQL Workbench  
 
-   Run the provided SQL file:
-3️⃣ Run the provided SQL file:
+### Step 2️⃣: Create Database
+Open MySQL Workbench and run:
 
-✅ Creates all tables
 
-🔗 Defines relationships
+CREATE DATABASE crime_records_system;
+USE crime_records_system;
 
-🔐 Assigns user roles & permissions
+Step 3️⃣: Import SQL File
 
-4️⃣ Use standard SQL commands to manage data:
+Open the provided crime_records_system.sql
+
+Execute the script
+
+This will:
+
+Create all tables
+
+Define relationships
+
+Set up foreign keys
+
+Create user roles and permissions (if included)
+
+Step 4️⃣: Perform Database Operations
+
+You can now use SQL commands:
 
 SELECT – Retrieve records
 
@@ -151,9 +157,15 @@ UPDATE – Modify existing data
 
 DELETE – Remove records
 
-📈 ER Diagram
-<img width="2991" height="1211" alt="ER 1" src="https://github.com/user-attachments/assets/5ba0fd40-6629-4549-a4a7-530d188169ad" />
+Example:
 
+SELECT * FROM Criminal;
+Step 5️⃣: Test Role-Based Access
+
+Login using different roles (Admin, Investigator, Officer, Clerk, Auditor) and verify permissions.
+
+📈 ER Diagram
+<p align="center"> <img src="https://github.com/user-attachments/assets/5ba0fd40-6629-4549-a4a7-530d188169ad" width="900"> </p>
 👨‍💻 Project Team
 
 👤 Md Imran
