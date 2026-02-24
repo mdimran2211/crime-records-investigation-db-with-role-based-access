@@ -161,6 +161,7 @@ The system implements relational database concepts, foreign key constraints, man
 
 Example:
 - SELECT * FROM Criminal;
+  
 ### Step 5️⃣: Test Role-Based Access
 
 - Login using different roles:
@@ -180,7 +181,7 @@ Example:
 ### 📈 ER Diagram
 <img width="2991" height="1211" alt="ER 1" src="https://github.com/user-attachments/assets/629cdba7-5df0-4d1a-9b74-4559401f00fa" />
 
- ###👨‍💻 Project Team
+ ### 👨‍💻 Project Team
 
 - 👤 Md Imran
 
@@ -190,7 +191,7 @@ Example:
 
 - 👤 Mohit
 
-###📜 License
+### 📜 License
 
 - This project is created for educational purposes only.
--It may be used and modified for learning and academic submissions.
+- It may be used and modified for learning and academic submissions.
