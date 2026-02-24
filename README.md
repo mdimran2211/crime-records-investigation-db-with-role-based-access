@@ -173,7 +173,7 @@ The system implements relational database concepts, foreign key constraints, man
 
 - 👮 Officer
 
- -🗂️ Clerk
+- 🗂️ Clerk
 
 - 📊 Auditor
 
